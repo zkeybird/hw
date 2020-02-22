@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>部门管理</title>
+    <link rel="stylesheet" type="text/css" href="ui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="ui/themes/icon.css">
+    <script type="text/javascript" src="ui/jquery.min.js"></script>
+    <script type="text/javascript" src="ui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="ui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+<table id="grid"></table>
+
+<script type="text/javascript">
+    $(function () {
+        $.messager.alert("提示","欢迎使用easyui") ;
+
+        $('#grid').datagrid({
+            url:'dep/getList',
+            columns:[[
+                {field:'uuid',title:'部门编号',width:100},
+                {field:'name',title:'部门名称',width:100},
+                {field:'tele',title:'部门电话',width:100,align:'right'}
+            ]],
+            singleSelect: true //只能选中单行
+        });
+    })
+</script>
+</body>
+</html>
